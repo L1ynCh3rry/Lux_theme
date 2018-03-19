@@ -25,6 +25,9 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLfv-yqP3anLtzjNH-7kuazTPWucjG2Y&callback=initMap " type="text/javascript "></script>
+
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- CSS -->
     <link href="<?php echo get_template_directory_uri(); ?>/css/animate.css" rel="stylesheet" type="text/css" />
@@ -67,28 +70,22 @@
     <header class="header" style="transition: 1s ease;">
         <div>
             <ul class="menu list-unstyled">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="blog.html">Blog</a>
-                </li>
-                <li>
-                    <a href="shop.html">Shop</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
+                <?php 
+                $top_menu = wp_get_nav_menu_items('MainMenu');
+
+                foreach($top_menu as $menu){ ?>
+                    <li><a href="<?php echo $menu->url; ?>"><?php echo $menu->title; ?></a></li>
+                <?php } ?>
             </ul>
         </div>
         <div>
             <ul class="Rmenu list-unstyled">
-                <li>
-                    <a href="register.html">REGISTER</a>
-                </li>
-                <li>
-                    <a href="login.html">LOG IN</a>
-                </li>
+            <?php 
+                $top_menu = wp_get_nav_menu_items('RightMenu');
+
+                foreach($top_menu as $menu){ ?>
+                    <li><a href="<?php echo $menu->url; ?>"><?php echo $menu->title; ?></a></li>
+                <?php } ?>
             </ul>
         </div>
         <div>
