@@ -119,4 +119,58 @@
     </main>
     <!---------- MAIN END ---------->
 
+<script type="text/javascript">
+        // FORM VALIDATION 
+        $(document).ready(function() {
+            $(function() {
+                $(".form-contact").validate({
+                    highlight: function(element) {
+                        $(element).closest('.form-group').addClass("has-danger");
+                        $(element).addClass("form-control-danger");
+                    },
+                    unhighlight: function(element) {
+                        $(element).closest('.form-group').removeClass('has-danger').addClass('has-success');
+                        $(element).removeClass('form-control-danger').addClass('form-control-success');
+                    },
+                    rules: {
+                        W_name: {
+                            required: true,
+                            rangelength: [3, 15]
+                        },
+                        W_email: {
+                            required: true,
+                            rangelength: [5, 20],
+                            email: true
+                        },
+                        W_message: {
+                            required: true,
+                            rangelength: [10, 255]
+                        }
+                    },
+                    messages: {
+                        W_name: {
+                            required: "The *Name field is required!",
+                            rangelength: "The *Name must be between 3 and 15 characters!"
+                        },
+                        W_email: {
+                            required: "The *Email field is required!",
+                            rangelength: "The *Email must be between 5 and 20 characters!",
+                            email: "Please enter a valid email addres!"
+                        },
+                        W_message: {
+                            required: "The *Message field is required!",
+                            rangelength: "The *Message must be between 10 and 255 characters!"
+                        }
+                    },
+                    errorElement: 'p',
+                    errorPlacement: function(error, element) {
+                        error.appendTo($(element).closest('.form-group').find('.error'));
+                    }
+
+                });
+            });
+        });
+        //Form Validation
+    </script>
+
 <?php get_footer(); ?>

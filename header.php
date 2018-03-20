@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
 
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmLfv-yqP3anLtzjNH-7kuazTPWucjG2Y&callback=initMap " type="text/javascript "></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6CpwbBvjiWO9BTZpj6JCKi-cBuUQGhsc&callback=initMap " type="text/javascript "></script>
 
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
